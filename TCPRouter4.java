@@ -12,16 +12,16 @@ public class TCPRouter4
    
    public static void main(String[] args)  
    {  
-      System.out.println("Port Açýlýyor");
+      System.out.println("Port AÃ§Ã½lÃ½yor");
       {  
           try  
           {  
-        	  System.out.println("TCPRoute4 Baþlatýlýyor..\\nLocalhost'un ip Adresi Alýnýyor..");
+        	  System.out.println("TCPRoute4 BaÃ¾latÃ½lÃ½yor..\nLocalhost'un ip Adresi AlÃ½nÃ½yor..");
         	  host = InetAddress.getLocalHost();  
           }  
           catch(Exception uhEx)  
           {  
-              System.out.println("Host'un ID'si Bulunamadý !");  
+              System.out.println("Host'un ID'si BulunamadÃ½ !");  
               System.exit(1);  
           }  
             
@@ -35,7 +35,7 @@ public class TCPRouter4
       }  
       catch(IOException ioEx)  
       {  
-         System.out.println("Yönlendirici için baðlantý noktasýna baðlanamýyor!!!");  
+         System.out.println("YÃ¶nlendirici iÃ§in baÃ°lantÃ½ noktasÃ½na baÃ°lanamÃ½yor!!!");  
          System.exit(1);  
       }  
       
@@ -58,7 +58,7 @@ public class TCPRouter4
            String message = ServerInput.nextLine(); 
            
            
-           Scanner receiverInput = new Scanner(ClientLink.getInputStream());      
+           Scanner ClientInput = new Scanner(ClientLink.getInputStream());      
    
            PrintWriter ClientOutput = new PrintWriter(ClientLink.getOutputStream(), true);   
         
@@ -70,10 +70,10 @@ public class TCPRouter4
         	 
         	 ClientOutput.println(message);
         	 
-        	 String str=receiverInput.nextLine();
+        	 String str=ClientInput.nextLine();
         	 
         	 if(!str.isEmpty() && !message.isEmpty())
-        		 System.out.println("Alýcýdan mesaj: "+str);
+        		 System.out.println("AlÃ½cÃ½dan mesaj: "+str);
 
         	 senderOutput.println(str);
         	 
@@ -92,13 +92,13 @@ public class TCPRouter4
        {  
           try  
           {  
-             System.out.println( "\n* Baðlantý Kapatýldý*");  
+             System.out.println( "\n* BaÃ°lantÃ½ KapatÃ½ldÃ½*");  
              ServerLink.close(); 
              ClientLink.close();
           }  
           catch(IOException ioEx)  
           {  
-              System.out.println(  "Baðlanýlamadý!");  
+              System.out.println(  "BaÃ°lanÃ½lamadÃ½!");  
             System.exit(1);  
           }  
        }
