@@ -12,16 +12,16 @@ public class TCPRouter2
    
    public static void main(String[] args)  
    {  
-      System.out.println("Port Açýlýyor");
+      System.out.println("Port AÃ§Ã½lÃ½yor");
       {  
           try  
           {  
-        	  System.out.println("TCPRoute2 Baþlatýlýyor..\\nLocalhost'un ip Adresi Alýnýyor..");
+        	  System.out.println("TCPRoute2 BaÃ¾latÃ½lÃ½yor..\nLocalhost'un ip Adresi AlÃ½nÃ½yor..");
         	  host = InetAddress.getLocalHost();  
           }  
           catch(Exception uhEx)  
           {  
-              System.out.println("Host'un ID'si bulunamadý !");  
+              System.out.println("Host'un ID'si bulunamadÃ½ !");  
               System.exit(1);  
           }  
             
@@ -35,7 +35,7 @@ public class TCPRouter2
       }  
       catch(IOException ioEx)  
       {  
-         System.out.println("Yönlendirici için baðlantý noktasýna baðlanamýyor!!!");  
+         System.out.println("YÃ¶nlendirici iÃ§in baÃ°lantÃ½ noktasÃ½na baÃ°lanamÃ½yor!!!");  
          System.exit(1);  
       }  
       
@@ -58,7 +58,7 @@ public class TCPRouter2
            String message = ServerInput.nextLine(); 
            
            
-           Scanner receiverInput = new Scanner(ClientLink.getInputStream());      
+           Scanner ClientInput = new Scanner(ClientLink.getInputStream());      
    
            PrintWriter ClientOutput = new PrintWriter(ClientLink.getOutputStream(), true);   
         
@@ -66,14 +66,14 @@ public class TCPRouter2
          while (!message.equals("***KAPAT***")){ 
         	 
         	 if(!message.isEmpty())
-        		 System.out.print("Sunucu mesajý "+message+"\t");
+        		 System.out.print("Sunucu mesajÃ½ "+message+"\t");
         	 
         	 ClientOutput.println(message);
         	 
-        	 String str=receiverInput.nextLine();
+        	 String str=ClientInput.nextLine();
         	 
         	 if(!str.isEmpty() && !message.isEmpty())
-        		 System.out.println("Alýcadan mesaj: "+str);
+        		 System.out.println("AlÃ½cadan mesaj: "+str);
 
         	 senderOutput.println(str);
         	 
@@ -92,13 +92,13 @@ public class TCPRouter2
        {  
           try  
           {  
-             System.out.println( "\n* Baðlantý kapatýlýyor*");  
+             System.out.println( "\n* BaÃ°lantÃ½ kapatÃ½lÃ½yor*");  
              ServerLink.close(); 
              ClientLink.close();
           }  
           catch(IOException ioEx)  
           {  
-              System.out.println( "Baðlanýlamadý!");  
+              System.out.println( "BaÃ°lanÃ½lamadÃ½!");  
             System.exit(1);  
           }  
        }
